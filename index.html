@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Journal</h1>
+
+      <section>
+        <h2>Daily Report</h2>
+
+        <div>
+          <label for="prefixInput">Prefix:</label>
+          <input type="text" id="prefixInput" placeholder="Enter prefix" />
+
+          <p id="result" onclick="copyToClipboard()"></p>
+
+          <button onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Exposition</h2>
+
+        <details>
+          <summary>Add New Entry</summary>
+
+          <form id="expositionForm">
+            <label for="situation">Situation:</label>
+            <input type="text" id="situation" name="situation" required />
+
+            <hr />
+
+            <label for="prediction">Catastrophic Prediction:</label>
+            <textarea id="prediction" name="prediction" required></textarea>
+
+            <label for="chart">Chart Visualization:</label>
+            <table id="chartTable">
+              <thead>
+                <tr>
+                  <th>Time (minutes)</th>
+                  <th>Stress</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+            <button id="addRowButton" type="button" class="centered-button">
+              Add Row
+            </button>
+
+            <label for="actual">What Actually Happened:</label>
+            <textarea id="actual" name="actual" required></textarea>
+
+            <button type="submit" class="centered-button">Submit</button>
+          </form>
+        </details>
+      </section>
+
+      <section>
+        <h2>Expositions List</h2>
+
+        <ul id="expositionsList" class="scroll" style="max-height: 800px; padding: 6px;"></ul>
+      </section>
+    </main>
+  </body>
+
+  <script src="./main.js"></script>
+</html>

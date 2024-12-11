@@ -1,0 +1,179 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+}
+
+/* General body and text styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333; /* Dark grey text for good readability */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px; /* Max width for the container */
+  margin: auto; /* Center the container */
+}
+
+h1,
+h2 {
+  color: #4682b4; /* Steel blue for headings */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff; /* White background for sections */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  color: #4682b4; /* Steel blue for labels */
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e6f7ff; /* Very light blue for input fields */
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #4682b4; /* Steel blue for table headers */
+  color: white;
+}
+
+td {
+  background-color: #f0f8ff; /* Light blue for table cells */
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"],
+button#addRowButton {
+  background-color: #4682b4; /* Steel blue */
+  color: white;
+}
+
+button[type="submit"]:hover,
+button#addRowButton:hover {
+  background-color: #5a9bd4; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+button[onclick="copyToClipboard()"] {
+  background-color: #32cd32; /* Lime green */
+  color: white;
+}
+
+button[onclick="copyToClipboard()"]:hover {
+  background-color: #3ee53e; /* Lighter green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+button.centered-button {
+  width: 250px;
+  margin: auto;
+  margin-top: 24px;
+}
+
+/* Neuromorphism textarea style */
+textarea {
+  font-family: "Arial", sans-serif;
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #e6f7ff; /* Light grey background for neuromorphism effect */
+  color: #333; /* Dark grey text */
+  resize: vertical;
+}
+
+/* Select element style */
+select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e6f7ff; /* Very light blue for select fields */
+  font-size: 16px;
+  color: #333; /* Dark grey text */
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%234682b4" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+hr {
+  height: 2px;
+  border: none;
+  margin: 20px 0;
+}
+
+details {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff; /* White background for details */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+details p {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll {
+  overflow-y: auto;
+  overflow-x: visible;
+}
