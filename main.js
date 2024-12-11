@@ -142,25 +142,39 @@ function initExpositionList() {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
       <details>
-        <summary>${getStringifiedDate(exposition.creationDate)} | ${
+        <summary>
+            ${getStringifiedDate(exposition.creationDate)} | ${
       exposition.situation
-    }</summary>
+    }
+        </summary>
 
-        <ol>
-          <li>Situation: ${exposition.situation}</li>
-          <li>Prediction: ${exposition.prediction}</li>
-          <li>Actual: ${exposition.actual}</li>
-          <li>Chart Data:
-            <ol>
-              ${exposition.chartData
-                .map(
-                  (data) =>
-                    `<li>Time: ${data.time} | Stress: ${data.stress}</li>`
-                )
-                .join("")}
-            </ol>
-          <li>Creation Date: ${exposition.creationDate ?? "No date registered"}</li>
-        </ol>
+        <form id="expositionTemplateForm">
+            <label>Situation</label>
+            <input type="text" value="${exposition.situation}" disabled />
+
+            <label>Catastrophic Prediction</label>
+            <textarea disabled>${exposition.prediction}</textarea>
+
+            <label>Chart Visualization</label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time (minutes)</th>
+                        <th>Stress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${exposition.chartData.map((data) => {
+                      return `<tr><td>${data.time}</td><td>${data.stress}</td></tr>`;
+                    })}
+                </tbody>
+            </table>
+
+            <hr />
+
+            <label>What Actually Happened</label>
+            <textarea disabled>${exposition.actual}</textarea>
+        </form>
       </details>
     `;
     list.appendChild(listItem);

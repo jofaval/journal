@@ -177,3 +177,8 @@ ul {
   overflow-y: auto;
   overflow-x: visible;
 }
+
+input[disabled], textarea[disabled] {
+    background-color: transparent;
+    border-color: transparent;
+}
